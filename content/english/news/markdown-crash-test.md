@@ -4,33 +4,28 @@ date: 2022-05-04T02:12:07.432Z
 image: /media/books_png.png
 summary: Let's check the support of Markdown
 ---
-
-
-# Markdown Crash Test
+# Markdown Crash Test 234
 
 ## Benchmarking the support of Markdown with a comprehensive checklist
-
 
 **You're working on a project featuring Markdown?**
 
 Drop [the source of this page](https://raw.githubusercontent.com/RoneoOrg/markdown/main/README.md) wherever you want to test *or showcase* the support of Markdown, and check that every single feature is properly rendered.
 
-
 **Table of Contents**
 
-- [Basic formatting](#basic-formatting)
-- [Blockquotes](#blockquotes)
-- [Lists](#lists)
-- [Linebreaks](#linebreaks)
-- [Links](#links)
-- [Code formatting](#code-formatting)
-- [Images](#images)
-- [Task lists](#task-lists)
-- [Tables](#tables)
-- [Footnotes](#footnotes)
-- [Definition List](#definition-list)
-- [Headings](#headings)
-
+* [Basic formatting](#basic-formatting)
+* [Blockquotes](#blockquotes)
+* [Lists](#lists)
+* [Linebreaks](#linebreaks)
+* [Links](#links)
+* [Code formatting](#code-formatting)
+* [Images](#images)
+* [Task lists](#task-lists)
+* [Tables](#tables)
+* [Footnotes](#footnotes)
+* [Definition List](#definition-list)
+* [Headings](#headings)
 
 ## Basic formatting
 
@@ -38,25 +33,31 @@ Drop [the source of this page](https://raw.githubusercontent.com/RoneoOrg/markdo
 
 **Syntax:**
 
-    You can mark some text as bold with **two asterisks**
-    or __two underscores__.
+```
+You can mark some text as bold with **two asterisks**
+or __two underscores__.
+```
 
 **Output:**
 
 You can mark some text as bold with **two asterisks**
-or __two underscores__.
+or **two underscores**.
 
 ### *Italic*
 
-    Use a *single asterisk* or a _single underscore_ for italic.
+```
+Use a *single asterisk* or a _single underscore_ for italic.
+```
 
 **Output:**
 
-Use a *single asterisk* or a _single underscore_ for italic.
+Use a *single asterisk* or a *single underscore* for italic.
 
 ### ***Bold and italic***
 
-    Three stars gives `***bold and italic***`
+```
+Three stars gives `***bold and italic***`
+```
 
 Three stars gives ***bold and italic***
 
@@ -64,13 +65,13 @@ Three stars gives ***bold and italic***
 
 Using `~~two tildes~~` will strikethrough:  ~~two tildes~~
 
-
-
 ## Blockquotes
 
 **Syntax:**
 
-    > blockquote
+```
+> blockquote
+```
 
 **Output**:
 
@@ -80,14 +81,17 @@ Using `~~two tildes~~` will strikethrough:  ~~two tildes~~
 
 **Syntax:**
 
-    > First level
-    >
-    >> Second level
+```
+> First level
+>
+>> Second level
+```
 
 **Output:**
 
 > First level
->> Second level
+>
+> > Second level
 
 ### Markdown in blockquotes
 
@@ -107,18 +111,19 @@ Using `~~two tildes~~` will strikethrough:  ~~two tildes~~
 **Output:**
 
 > **Markdown** can be used *inside quotes*
+>
 > 1. This is the first list item.
-> 1. This is the second list item.
+> 2. This is the second list item.
 >
 > ~~strikethrough~~
 >
 > Here's some example code:
 >
->     return shell_exec("echo $input | $markdown_script");
-
+> ```
+> return shell_exec("echo $input | $markdown_script");
+> ```
 
 ## Lists
-
 
 ### Unordered list
 
@@ -144,14 +149,12 @@ Cant be marked with `-`, `+` or `*`
 
 **Output:**
 
-- First item
-- Second item
-- Third item
-
-+ First item
-+ Second item
-+ Third item
-
+* First item
+* Second item
+* Third item
+* First item
+* Second item
+* Third item
 * First item
 * Second item
 * Third item
@@ -169,10 +172,8 @@ Incrementation is automatic, you can simply use `1.` everywhere
 **Output:**
 
 1. First item
-1. Second item
-1. Third item
-
-
+2. Second item
+3. Third item
 
 ### Nested list
 
@@ -187,13 +188,13 @@ Incrementation is automatic, you can simply use `1.` everywhere
 
 **Output:**
 
-- First item
-- Second item
-- Third item
-  1. Indented item
-  1. Indented item
-- Fourth item
+* First item
+* Second item
+* Third item
 
+  1. Indented item
+  2. Indented item
+* Fourth item
 
 ## Linebreaks
 
@@ -227,7 +228,7 @@ Second line
 
 **Output:**
 
-This is the first line.  
+This is the first line.\
 Second line
 
 ### Horizontal lines
@@ -244,17 +245,13 @@ ____
 
 **Output:**
 
-----
+- - -
 
-****
+- - -
 
-____
-
-
-
+- - -
 
 ## Links
-
 
 ### Basic links
 
@@ -266,10 +263,9 @@ ____
 
 **Output:**
 
-[Semantic description](https://roneo.org/markdown)  
-<address@example.com>  
+[Semantic description](https://roneo.org/markdown)\
+[address@example.com](mailto:address@example.com)\
 <https://roneo.org/markdown> works too. Must be used for explicit links.
-
 
 ### Links using text reference
 
@@ -285,16 +281,11 @@ ____
 
 **Output:**
 
-[I'm a link][Reference text]
+[I'm a link](https://jamstack.club)
 
-[This link] will do the same as well. It works as the identifier itself.
-
-
-[reference text]: https://jamstack.club
-[this link]: https://roneo.org/markdown
+[This link](https://roneo.org/markdown) will do the same as well. It works as the identifier itself.
 
 **Note:** The reference text is *not* case sensitive
-
 
 ### Link with a title on hover
 
@@ -312,48 +303,47 @@ Several syntaxes are accepted:
 
 **Output:**
 
-[Random text][random-identifier]. Hover the mouse over it to see the title.
+[Random text](https://roneo.org/markdown "This example has a title"). Hover the mouse over it to see the title.
 
 Several syntaxes are accepted:
 [One](https://eff.org "First site")
-[Two](https://jamstack.club 'Second site')
-[Three](https://debian.org (Third site))
-
-[random-identifier]: https://roneo.org/markdown "This example has a title"
-
+[Two](https://jamstack.club "Second site")
+[Three](https://debian.org "Third site")
 
 ### Links with Markdown style
 
 To ***emphasize*** links, add asterisks before and after the brackets and parentheses.
 
-    I love supporting the **[EFF](https://eff.org)**.  
-    This is the *[Markdown Guide](https://www.markdownguide.org)*.
+```
+I love supporting the **[EFF](https://eff.org)**.  
+This is the *[Markdown Guide](https://www.markdownguide.org)*.
+```
 
 To denote links as `code`, add backticks *inside* the brackets:
 
-    See the section on [`code`](#code).
+```
+See the section on [`code`](#code).
+```
 
 **Output:**
 
-I love supporting the **[EFF](https://eff.org)**.  
-This is the *[Markdown Guide](https://www.markdownguide.org)*.  
+I love supporting the **[EFF](https://eff.org)**.\
+This is the *[Markdown Guide](https://www.markdownguide.org)*.\
 See the section on [`code`](#code).
-
 
 ### Attribute a custom anchor to a heading
 
 Anchors are automatically generated based on the heading's content. You can customize the anchor this way:
 
-    ### Heading {#custom-id}
+```
+### Heading {#custom-id}
+```
 
 **Output:**
 
 #### Heading {#custom-id}
 
-
-
 ## Code formatting
-
 
 ### Inline
 
@@ -361,10 +351,9 @@ Wrap with single backticks to highlight as`` `code` `` → `code`
 
 ### Codeblocks
 
-Create a code block with three backticks `` ``` `` before and after your block of code.
+Create a code block with three backticks ```` ``` ```` before and after your block of code.
 
 **Output:**
-
 
 ```
 sudo apt hello
@@ -375,23 +364,28 @@ Also possible with a tabulation or four empty spaces at the beginning of the lin
 
 **Tabulation**
 
-	sudo apt hello
-	echo "hi"
+```
+sudo apt hello
+echo "hi"
+```
 
 **Four whitespaces**
 
-    sudo apt hello
+```
+sudo apt hello
+```
 
 Let's test the wrapping of a long line:
 
-	apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test
+```
+apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test
+```
 
 ### Codeblocks with syntax highlighting
 
-Set the language right after the first backticks (for example `` ```html  ``) to get syntax highlighting
+Set the language right after the first backticks (for example ```` ```html````) to get syntax highlighting
 
 #### Samples:
-
 
 #### HTML
 
@@ -440,33 +434,36 @@ Any ASCII punctuation character may be escaped using a single backslash.
 
 Example:
 
-    \*this is not italic*
+```
+\*this is not italic*
+```
 
 **Output:**
 
-\*this is not italic*
+\*this is not italic\*
 
 Markdown provides backslash escapes for the following characters:
 
-    \   backslash
-    `   backtick
-    *   asterisk
-    _   underscore
-    {}  curly braces
-    []  square brackets
-    ()  parentheses
-    #   hash mark
-	+	plus sign
-	-	minus sign (hyphen)
-    .   dot
-    !   exclamation mark
-
+```
+\   backslash
+`   backtick
+*   asterisk
+_   underscore
+{}  curly braces
+[]  square brackets
+()  parentheses
+#   hash mark
++	plus sign
+-	minus sign (hyphen)
+.   dot
+!   exclamation mark
+```
 
 ## Images
 
 ### Basic syntax
 
-``` markdown
+```markdown
   ![Semantic description of the image](https://roneo.org/img/ok.png)
 ```
 
@@ -474,11 +471,10 @@ Markdown provides backslash escapes for the following characters:
 
 **Note: The text inside the square brackets is important!**
 
-Screen reader users get informations about the image with this attribute called `ALT`, for _alternative text_.
+Screen reader users get informations about the image with this attribute called `ALT`, for *alternative text*.
 
-Including **descriptive** alt text [helps maintain accessibility](https://webaim.org/techniques/alttext/) for every visitor and should always be included with an image. When you add alt text be sure to describe the content and function of the picture.  
+Including **descriptive** alt text [helps maintain accessibility](https://webaim.org/techniques/alttext/) for every visitor and should always be included with an image. When you add alt text be sure to describe the content and function of the picture.\
 In addition to the accessibility benefits, `ALT` is useful for SEO. It's also displayed when, for some reason, the picture is not loaded by the browser.
-
 
 ### Image with title and caption
 
@@ -487,7 +483,6 @@ In addition to the accessibility benefits, `ALT` is useful for SEO. It's also di
 ```
 
 ![Semantic description](https://roneo.org/img/ok.png "Your title")*Your caption*
-
 
 ### Clickable images
 
@@ -501,8 +496,6 @@ For clickable images, simply wrap the image markup into a [link markup](#links):
 
 [![Semantic description](https://roneo.org/img/ok.png "Your title")](http://jamstack.club)
 
-
-
 ### Image with an identifier
 
 You can call the image with an identifier as we do for [links](#links)
@@ -515,10 +508,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit [...]
 [image identifier]: https://roneo.org/img/ok.png "Title"
 ```
 
-![Semantic desc.][image identifier]
-
-[image identifier]: https://roneo.org/img/ok.png "Title"
-
+![Semantic desc.](https://roneo.org/img/ok.png "Title")
 
 ## Task lists
 
@@ -529,13 +519,10 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit [...]
 
 **Output:**
 
-- [x] Write the press release
-- [ ] Update the website
-
-
+* Write the press release
+* Update the website
 
 ## Tables
-
 
 ```
 | Syntax    | Description |
@@ -555,14 +542,12 @@ or
 
 will render the same way:
 
-| Syntax | Description |
-| - | --- |
-| Header | Title |
-| Paragraph | Text|
-
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
 
 ### Text alignment in tables
-
 
 ```
 | Syntax    | Description |   Test Text |
@@ -573,12 +558,10 @@ will render the same way:
 
 See the way the text is aligned, depending on the position of `':'`
 
-| Syntax    | Description |   Test Text |
-| :-------- | :---------: | ----------: |
-| Header    |    Title    | Here's this |
-| Paragraph |    Text     |    And more |
-
-
+| Syntax    | Description | Test Text   |
+| --------- | ----------- | ----------- |
+| Header    | Title       | Here's this |
+| Paragraph | Text        | And more    |
 
 ## Footnotes
 
@@ -591,7 +574,7 @@ Here's a sentence with a footnote[^1].
 
 **Output:**
 
-Here's a sentence with a footnote[^1].  
+Here's a sentence with a footnote[^1].\
 (see the result at the bottom of the page)
 
 [^1]: This is the first footnote.
@@ -624,10 +607,7 @@ Here's a longer one.[^bignote]
 	
 	Note that you can place the footnote anywhere you want in your article
 
-
-
 ## Definition List
-
 
 ```
 term
@@ -651,12 +631,10 @@ second term
 complex term
 : long definition including **bold text**. Velit tempor cillum aute culpa pariatur enim laboris consectetur tempor. Aute elit non do ipsum. Nisi quis culpa magna esse ipsum. Ad aliquip ullamco minim cillum in ullamco.
 
-
 ## Headings
 
-Add `##` at the beginning of a line to set as Heading.  
+Add `##` at the beginning of a line to set as Heading.\
 You can use up to 6 `#` symbols for the corresponding Heading levels
-
 
 ```
 ## Heading 1
@@ -665,13 +643,11 @@ You can use up to 6 `#` symbols for the corresponding Heading levels
 ###### Heading 6
 ```
 
-
 ## Heading 2
 
 pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
 
-
-### Heading 3 ##################################
+### Heading 3
 
 pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
 
@@ -687,20 +663,19 @@ pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, v
 
 pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
 
-
 ## References
 
-- Source of this page: [roneo.org/markdown](https://roneo.org/markdown)
-- [Markdown Guide - Basic Syntax](https://www.markdownguide.org/basic-syntax)
-- [Markdown Guide - Extended Syntax](https://www.markdownguide.org/extended-syntax)
-- [Daring Fireball: Markdown Syntax Documentation](https://daringfireball.net/projects/markdown/syntax)
-- [Markdown Guide at Gitlab.com](https://about.gitlab.com/handbook/markdown-guide/)
-- [CommonMark Spec](https://spec.commonmark.org/0.29/)
+* Source of this page: [roneo.org/markdown](https://roneo.org/markdown)
+* [Markdown Guide - Basic Syntax](https://www.markdownguide.org/basic-syntax)
+* [Markdown Guide - Extended Syntax](https://www.markdownguide.org/extended-syntax)
+* [Daring Fireball: Markdown Syntax Documentation](https://daringfireball.net/projects/markdown/syntax)
+* [Markdown Guide at Gitlab.com](https://about.gitlab.com/handbook/markdown-guide/)
+* [CommonMark Spec](https://spec.commonmark.org/0.29/)
 
 ## Related projects
 
-- https://github.com/ericwbailey/markdown-test-file
-- https://scottspence.com/posts/writing-with-markdown
-- https://codingnconcepts.com/markdown/markdown-syntax/
-- https://codeit.suntprogramator.dev/basic-markdown-syntax/
-- https://daringfireball.net/projects/markdown/syntax.text
+* https://github.com/ericwbailey/markdown-test-file
+* https://scottspence.com/posts/writing-with-markdown
+* https://codingnconcepts.com/markdown/markdown-syntax/
+* https://codeit.suntprogramator.dev/basic-markdown-syntax/
+* https://daringfireball.net/projects/markdown/syntax.text
